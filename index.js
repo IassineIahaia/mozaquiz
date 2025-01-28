@@ -7,6 +7,8 @@ const connection = require('./database/database');
 
 const Pergunta = require('./database/Pergunta');
 
+const Resposta = require('./database/Resposta');
+
 connection.authenticate().then(() => {
     console.log('Conectado ao banco de dados');
 }).catch((error) => {
