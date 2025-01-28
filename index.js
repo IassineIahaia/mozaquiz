@@ -50,6 +50,17 @@ app.post('/savequestion', (req, res) => {
     
 });
 
+app.get('/pergunta/:id', (req, res) => {
+    var id = req.params.id;
+
+    Pergunta.findOne({where: {id: id}}).then(perguntas => {
+        if(perguntas != undefined){
+            res.render('pergunta')
+        }else{
+            res.redirect('/');
+        }
+    })
+})
 
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000'); 
