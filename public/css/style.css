@@ -1,0 +1,11 @@
+body{
+    background-color: #eceff1;
+}
+a img{
+    width: 80px;
+    height: auto;
+}
+
+#perguntar{
+    margin-top: 5vh;
+}
