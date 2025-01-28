@@ -64,6 +64,18 @@ app.get('/pergunta/:id', (req, res) => {
     })
 })
 
+app.post('/responder', (req, res) => {
+    var corpo = req.body.corpo;
+    var perguntaId = req.body.perguntaId;
+
+    Resposta.create({
+        corpo: corpo,
+        perguntaId: perguntaId
+    }).then(() => {
+        res.redirect('/pergunta/' + perguntaId);
+    })
+})
+
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000'); 
 });
